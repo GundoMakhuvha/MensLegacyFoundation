@@ -14,7 +14,8 @@ const lineupEvents: string[] = [
   // Add lineup poster image URLs here, e.g.:
    "https://i.postimg.cc/m2whwPmW/Mr-Mabena-Poster.jpg",
    "https://i.postimg.cc/V6nkbvJp/bright-psoter.jpg",
-   "https://i.postimg.cc/5ym9nrqK/kenny-poster.jpg",
+   "https://i.postimg.cc/xddqTJh6/kenny-poster.jpg",
+   "https://i.postimg.cc/q7t0589t/prince-poster.jpg",
 ];
 
 const pastEvents = [
@@ -85,7 +86,7 @@ const Events = () => {
             <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground">Supporting The Event</h3>
           </div>
           {lineupEvents.length === 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
               {[1, 2, 3].map((i) => (
                 <div
                   key={i}
@@ -97,7 +98,7 @@ const Events = () => {
               ))}
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
               {lineupEvents.map((image, i) => (
                 <div key={i} className="bg-card rounded-xl overflow-hidden shadow-md border border-border card-premium reveal">
                   <button

@@ -7,6 +7,9 @@ const teamMembers = [
   { name: "Mr. Dlodlo", role: "Vice Chairman", bio: "Committed to building strong communities through mentorship and education.", image: "https://i.postimg.cc/GhF10b60/Wandi.png" },
   { name: "Mr. Sathekge", role: "Photographer", bio: "Captures and drives impactful programmes that transform young lives.", image: "https://i.postimg.cc/N0r9Y9tG/North-Face.png" },
   { name: "Mr. Kgole", role: "Fitness Coach", bio: "Health & Fittness for foundation with families and communities who need us most.", image: "https://i.postimg.cc/c44vC5Zy/Eish.png" },
+  { name: "Mr. Kamoto", role: "Management", bio: "Leads the NPO and oversees its operations and goals.", image: "https://i.postimg.cc/RVnDyg0t/Mr-Kamoto-Management.png" },
+  { name: "Mr. Rambau", role: "Secretary", bio: "Handles records, minutes, and official communication.", image: "https://i.postimg.cc/vZrSHDfm/Mr-Rambau-Secretary.png" },
+  { name: "Mr. Phocana", role: "Treasure", bio: "Manages finances, budgeting, and financial reporting.", image: "https://i.postimg.cc/25TchJHV/Mr-Phocana-Treasurer.png" },
 ];
 
 const About = () => {
