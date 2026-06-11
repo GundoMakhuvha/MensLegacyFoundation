@@ -64,10 +64,16 @@ const Footer = () => (
                 <p>Vice Chairman (Wandile): +27 81 215 0048</p>
                </div>
             </div>
+
+
             <div className="flex items-start gap-2">
               <Mail size={16} className="mt-0.5 text-gold shrink-0" />
-              <span>info@menslegacyfoundation.org.za</span>
+              <a href="mailto:info@menslegacyfoundation.co.za" className="hover:text-gold transition-colors">
+                info@menslegacyfoundation.co.za
+              </a>
             </div>
+
+
             <div className="flex items-start gap-2">
               <MapPin size={16} className="mt-0.5 text-gold shrink-0" />
               <span>11 Izellah, Percy Steward Street, Rangeview, Krugersdorp, 1739</span>

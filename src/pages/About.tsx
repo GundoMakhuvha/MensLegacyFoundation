@@ -9,7 +9,7 @@ const teamMembers = [
   { name: "Mr. Kgole", role: "Fitness Coach", bio: "Health & Fittness for foundation with families and communities who need us most.", image: "https://i.postimg.cc/c44vC5Zy/Eish.png" },
   { name: "Mr. Kamoto", role: "Management", bio: "Leads the NPO and oversees its operations and goals.", image: "https://i.postimg.cc/RVnDyg0t/Mr-Kamoto-Management.png" },
   { name: "Mr. Rambau", role: "Secretary", bio: "Handles records, minutes, and official communication.", image: "https://i.postimg.cc/vZrSHDfm/Mr-Rambau-Secretary.png" },
-  { name: "Mr. Phocana", role: "Treasure", bio: "Manages finances, budgeting, and financial reporting.", image: "https://i.postimg.cc/25TchJHV/Mr-Phocana-Treasurer.png" },
+  { name: "Mr. Phochana", role: "Treasure", bio: "Manages finances, budgeting, and financial reporting.", image: "https://i.postimg.cc/25TchJHV/Mr-Phocana-Treasurer.png" },
 ];
 
 const About = () => {

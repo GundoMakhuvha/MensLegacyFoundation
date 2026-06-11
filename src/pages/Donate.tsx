@@ -39,7 +39,7 @@ const Donate = () => {
             We are currently completing final payment gateway testing and
             verification with Capvtal Innovations and PayFast. Online donations
             will be available shortly. Thank you for your patience and continued
-            support.
+            support. In the meantime, please use the manual option below. 
           </p>
         </div>
       </section>

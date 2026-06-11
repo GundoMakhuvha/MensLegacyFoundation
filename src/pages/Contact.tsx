@@ -35,8 +35,12 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="font-semibold text-foreground text-sm">Phone</p>
-                    <p className="text-muted-foreground text-sm">Chairman: 067 224 8962</p>
-                    <p className="text-muted-foreground text-sm">Vice Chairman: 081 215 0048</p>
+                    <a href="tel:0672248962" className="block text-muted-foreground text-sm hover:text-gold transition-colors">
+                      Chairman: 067 224 8962
+                    </a>
+                    <a href="tel:0812150048" className="block text-muted-foreground text-sm hover:text-gold transition-colors">
+                      Vice Chairman: 081 215 0048
+                    </a>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -155,7 +159,7 @@ const Contact = () => {
           <p className="text-navy-dark/80 max-w-xl mx-auto mb-8">
             Your contribution helps us reach more young boys and transform their futures. Every donation makes a difference.
           </p>
-          <a href="mailto:info@menslegacyfoundation.org.za" className="inline-block px-8 py-4 bg-navy text-primary-foreground font-semibold rounded-md hover:bg-navy-light transition-colors text-lg">
+          <a href="/donate" className="inline-block px-8 py-4 bg-navy text-primary-foreground font-semibold rounded-md hover:bg-navy-light transition-colors text-lg">
             Donate Now
           </a>
         </div>
