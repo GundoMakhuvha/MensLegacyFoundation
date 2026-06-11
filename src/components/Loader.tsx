@@ -16,20 +16,20 @@ const Loader = () => (
     </p>
 
     {/* Capvtal Innovations credit */}
-    <div className="absolute top-20 flex flex-col items-center gap-2 group">
+    <div className="absolute top-8 flex flex-col items-center gap-2 group">
       
-      <div className="flex items-center gap-2 opacity-100 hover:opacity-70 transition-opacity duration-500">
+      <div className="flex items-center gap-2 opacity-40 hover:opacity-70 transition-opacity duration-500">
         <img
           src={capvtalLogo}
           alt="Capvtal Innovations"
-          className="h-10 w-auto invert brightness-75 group-hover:brightness-100 transition-all duration-500"
+          className="h-4 w-auto invert brightness-75 group-hover:brightness-100 transition-all duration-500"
         />
         <div className="flex flex-col leading-none">
           <span className="text-[9px] tracking-[0.25em] uppercase text-white/60 font-light">
-            Developed By:
+            Developed by
           </span>
           <span className="text-[10px] tracking-[0.2em] uppercase text-white font-semibold">
-            Capvtal Innovations.
+            Capvtal Innovations
           </span>
         </div>
       </div>
