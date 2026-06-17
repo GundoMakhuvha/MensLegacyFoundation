@@ -1,7 +1,12 @@
-import { useState } from "react";
-import { CalendarDays, MapPin } from "lucide-react";
+import { useState, useEffect } from "react";
+import { CalendarDays, MapPin, X } from "lucide-react";
 import Lightbox from "@/components/Lightbox";
-import campImg from "@/assets/camp-activity.jpg";
+
+const TARGET = new Date("2026-06-26T00:00:00+02:00");
+
+function pad(n: number) {
+  return String(n).padStart(2, "0");
+}
 
 const mainEvent = {
   title: "MLF 4th Annual Conference",
@@ -34,6 +39,80 @@ const pastEvents = [
   },
 ];
 
+const ConferenceCountdown = () => {
+  const [visible, setVisible] = useState(true);
+  const [timeLeft, setTimeLeft] = useState({ days: 0, hrs: 0, mins: 0, secs: 0 });
+  const [past, setPast] = useState(false);
+
+  useEffect(() => {
+    const tick = () => {
+      const diff = TARGET.getTime() - Date.now();
+      if (diff <= 0) {
+        setPast(true);
+        return;
+      }
+      const s = Math.floor(diff / 1000);
+      const m = Math.floor(s / 60);
+      const h = Math.floor(m / 60);
+      const d = Math.floor(h / 24);
+      setTimeLeft({ days: d, hrs: h % 24, mins: m % 60, secs: s % 60 });
+    };
+    tick();
+    const id = setInterval(tick, 1000);
+    return () => clearInterval(id);
+  }, []);
+
+  if (!visible) return null;
+
+  return (
+    <div className="container mx-auto px-4 pt-8">
+      <div className="flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-gold/40 bg-navy-dark px-5 py-4">
+        <div>
+          <p className="text-[11px] font-semibold uppercase tracking-widest text-gold mb-1">
+            Upcoming event
+          </p>
+          <p className="text-sm font-medium text-gold/90">
+            MLF 4th Annual Conference &nbsp;·&nbsp; 26 – 28 June 2026
+          </p>
+        </div>
+
+        {past ? (
+          <p className="text-sm font-medium text-gold">The conference has begun! 🎉</p>
+        ) : (
+          <div className="flex gap-2.5 flex-wrap">
+            {[
+              { label: "Days", value: timeLeft.days },
+              { label: "Hours", value: pad(timeLeft.hrs) },
+              { label: "Mins", value: pad(timeLeft.mins) },
+              { label: "Secs", value: pad(timeLeft.secs) },
+            ].map(({ label, value }) => (
+              <div
+                key={label}
+                className="flex min-w-[54px] flex-col items-center rounded-xl border border-gold/30 bg-gold/10 px-3.5 py-2"
+              >
+                <span className="text-2xl font-bold tabular-nums text-gold leading-none">
+                  {value}
+                </span>
+                <span className="mt-1 text-[10px] uppercase tracking-widest text-gold/50">
+                  {label}
+                </span>
+              </div>
+            ))}
+          </div>
+        )}
+
+        <button
+          onClick={() => setVisible(false)}
+          aria-label="Dismiss countdown"
+          className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-gold/30 text-gold/50 hover:bg-gold/10 hover:text-gold transition-colors self-start"
+        >
+          <X size={15} />
+        </button>
+      </div>
+    </div>
+  );
+};
+
 const Events = () => {
   const [lightboxImage, setLightboxImage] = useState<{ src: string; alt: string } | null>(null);
 
@@ -47,6 +126,8 @@ const Events = () => {
         </div>
       </section>
 
+      <ConferenceCountdown />
+
       {/* Upcoming Events */}
       <section className="py-12 md:py-20">
         <div className="container mx-auto px-4">
@@ -56,7 +137,7 @@ const Events = () => {
             <p className="text-muted-foreground mt-3 max-w-2xl mx-auto">Get Ready for our flagship conference</p>
           </div>
 
-          {/* Headline / Main Poster — constrained on mobile to look like a card */}
+          {/* Headline / Main Poster */}
           <div className="max-w-[280px] sm:max-w-xs md:max-w-sm mx-auto reveal">
             <div className="relative bg-card rounded-2xl overflow-hidden shadow-2xl border-2 border-gold card-premium">
               <div className="absolute top-3 left-3 z-10 bg-gold-gradient text-navy-dark text-[10px] md:text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full shadow-lg">
@@ -95,7 +176,6 @@ const Events = () => {
                 ))}
               </div>
             ) : (
-              /* 2-col on mobile, 4-col on desktop — mirrors the desktop feel */
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6">
                 {lineupEvents.map((image, i) => (
                   <div key={i} className="bg-card rounded-xl overflow-hidden shadow-md border border-border card-premium reveal">
@@ -129,11 +209,11 @@ const Events = () => {
             {pastEvents.map((event) => (
               <div key={event.title} className="bg-card rounded-lg overflow-hidden shadow-md border border-border card-premium reveal">
                 <button
-                  onClick={() => setLightboxImage({ src: event.image as string, alt: event.title })}
+                  onClick={() => setLightboxImage({ src: event.image, alt: event.title })}
                   className="aspect-[16/9] w-full overflow-hidden cursor-pointer"
                 >
                   <img
-                    src={event.image as string}
+                    src={event.image}
                     alt={`${event.title} – ${event.location}`}
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                   />

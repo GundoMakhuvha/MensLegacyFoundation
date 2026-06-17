@@ -16,7 +16,7 @@ const Loader = () => (
     </p>
 
     {/* Capvtal Innovations credit */}
-    <div className="absolute top-8 flex flex-col items-center gap-2 group">
+    <div className="absolute topcdcd-8 flex flex-col items-center gap-2 group">
       
       <div className="flex items-center gap-2 opacity-40 hover:opacity-70 transition-opacity duration-500">
         <img
@@ -26,10 +26,10 @@ const Loader = () => (
         />
         <div className="flex flex-col leading-none">
           <span className="text-[9px] tracking-[0.25em] uppercase text-white/60 font-light">
-            Developed by
+            Developed By:
           </span>
           <span className="text-[10px] tracking-[0.2em] uppercase text-white font-semibold">
-            Capvtal Innovations
+            Capvtal Innovations.
           </span>
         </div>
       </div>
