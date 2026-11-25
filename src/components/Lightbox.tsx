@@ -11,7 +11,7 @@ const Lightbox = ({ src, alt = "Full size view", onClose }: LightboxProps) => (
     <button className="absolute top-6 right-6 text-primary-foreground hover:text-gold transition-colors" onClick={onClose}>
       <X size={32} />
     </button>
-    <img src={src} alt={alt} className="max-w-full max-h-[90vh] object-contain rounded-lg" onClick={(e) => e.stopPropagation()} />
+    <img src={src} alt={alt} className="max-w-full max-h-[90vh] object-contain rounded-3xl" onClick={(e) => e.stopPropagation()} />
   </div>
 );
 

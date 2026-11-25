@@ -22,7 +22,7 @@ const Donate = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* ── Hero ── */}
-      <section className="relative bg-navy-dark text-primary-foreground py-20 overflow-hidden">
+      <section className="page-hero bg-navy-gradient text-primary-foreground">
         <div
           className="absolute inset-0 opacity-20 bg-cover bg-center"
           style={{
@@ -104,7 +104,7 @@ const Donate = () => {
         </div>
 
         {/* Reference reminder */}
-        <div className="mt-6 bg-gold/10 border border-gold/30 rounded-xl px-5 py-4 text-center">
+        <div className="mt-6 bg-gold/10 border border-gold/30 rounded-3xl px-5 py-4 text-center">
           <p className="text-sm text-foreground">
             <span className="font-semibold text-gold">Important:</span> Use
             your <span className="font-semibold">Name, Surname and Age</span> as

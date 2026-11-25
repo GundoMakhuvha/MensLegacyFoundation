@@ -88,7 +88,7 @@ const ConferenceCountdown = () => {
             ].map(({ label, value }) => (
               <div
                 key={label}
-                className="flex min-w-[54px] flex-col items-center rounded-xl border border-gold/30 bg-gold/10 px-3.5 py-2"
+                className="flex min-w-[54px] flex-col items-center rounded-3xl border border-gold/30 bg-gold/10 px-3.5 py-2"
               >
                 <span className="text-2xl font-bold tabular-nums text-gold leading-none">
                   {value}
@@ -104,7 +104,7 @@ const ConferenceCountdown = () => {
         <button
           onClick={() => setVisible(false)}
           aria-label="Dismiss countdown"
-          className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-gold/30 text-gold/50 hover:bg-gold/10 hover:text-gold transition-colors self-start"
+          className="flex h-8 w-8 shrink-0 items-center justify-center rounded-3xl border border-gold/30 text-gold/50 hover:bg-gold/10 hover:text-gold transition-colors self-start"
         >
           <X size={15} />
         </button>
@@ -118,9 +118,9 @@ const Events = () => {
 
   return (
     <>
-      <section className="py-16 md:py-20 bg-navy-gradient">
+      <section className="page-hero bg-navy-gradient">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-gold font-semibold tracking-widest uppercase text-sm mb-2">What's Coming</p>
+          <p className="eyebrow mb-4">What's Coming</p>
           <h1 className="font-display text-4xl md:text-5xl font-bold text-primary-foreground mb-4">Events</h1>
           <p className="max-w-2xl mx-auto text-primary-foreground/70 text-lg">Join us at our upcoming events and be part of the change.</p>
         </div>
@@ -132,7 +132,7 @@ const Events = () => {
       <section className="py-12 md:py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8 md:mb-12 reveal">
-            <p className="text-gold font-semibold tracking-widest uppercase text-sm mb-2">Mark Your Calendar</p>
+            <p className="eyebrow mb-4">Mark Your Calendar</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">Upcoming Event</h2>
             <p className="text-muted-foreground mt-3 max-w-2xl mx-auto">Get Ready for our flagship conference</p>
           </div>
@@ -160,7 +160,7 @@ const Events = () => {
           {/* Supporting Lineup */}
           <div className="max-w-5xl mx-auto mt-10 md:mt-16">
             <div className="text-center mb-6 md:mb-8 reveal">
-              <p className="text-gold font-semibold tracking-widest uppercase text-xs mb-2">The Lineup</p>
+              <p className="eyebrow mb-4">The Lineup</p>
               <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground">Supporting The Event</h3>
             </div>
             {lineupEvents.length === 0 ? (
@@ -168,7 +168,7 @@ const Events = () => {
                 {[1, 2, 3].map((i) => (
                   <div
                     key={i}
-                    className="aspect-[3/4] rounded-xl border-2 border-dashed border-border bg-secondary/40 flex flex-col items-center justify-center text-center p-4 reveal"
+                    className="aspect-[3/4] rounded-3xl border-2 border-dashed border-border bg-secondary/40 flex flex-col items-center justify-center text-center p-4 reveal"
                   >
                     <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-gold/20 text-gold flex items-center justify-center font-bold mb-2 md:mb-3 text-sm">{i}</div>
                     <p className="text-xs text-muted-foreground">Lineup poster coming soon</p>
@@ -178,7 +178,7 @@ const Events = () => {
             ) : (
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6">
                 {lineupEvents.map((image, i) => (
-                  <div key={i} className="bg-card rounded-xl overflow-hidden shadow-md border border-border card-premium reveal">
+                  <div key={i} className="bg-card rounded-3xl overflow-hidden shadow-[0_1px_2px_hsl(var(--navy-dark)/0.04),0_12px_32px_-12px_hsl(var(--navy-dark)/0.12)] border border-border/70 card-premium reveal">
                     <button
                       onClick={() => setLightboxImage({ src: image, alt: `Lineup poster ${i + 1}` })}
                       className="block w-full cursor-pointer"
@@ -202,12 +202,12 @@ const Events = () => {
       <section className="py-12 md:py-20 bg-secondary">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8 md:mb-12 reveal">
-            <p className="text-gold font-semibold tracking-widest uppercase text-sm mb-2">Looking Back</p>
+            <p className="eyebrow mb-4">Looking Back</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">Past Events</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto">
             {pastEvents.map((event) => (
-              <div key={event.title} className="bg-card rounded-lg overflow-hidden shadow-md border border-border card-premium reveal">
+              <div key={event.title} className="bg-card rounded-3xl overflow-hidden shadow-[0_1px_2px_hsl(var(--navy-dark)/0.04),0_12px_32px_-12px_hsl(var(--navy-dark)/0.12)] border border-border/70 card-premium reveal">
                 <button
                   onClick={() => setLightboxImage({ src: event.image, alt: event.title })}
                   className="aspect-[16/9] w-full overflow-hidden cursor-pointer"

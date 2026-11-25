@@ -53,7 +53,7 @@ const ConferenceCountdown = () => {
             ].map(({ label, value }) => (
               <div
                 key={label}
-                className="flex min-w-[54px] flex-col items-center rounded-xl border border-gold/30 bg-gold/10 px-3.5 py-2"
+                className="flex min-w-[54px] flex-col items-center rounded-3xl border border-gold/30 bg-gold/10 px-3.5 py-2"
               >
                 <span className="text-2xl font-bold tabular-nums text-gold leading-none">
                   {value}
@@ -69,7 +69,7 @@ const ConferenceCountdown = () => {
         <button
           onClick={() => setVisible(false)}
           aria-label="Dismiss countdown"
-          className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-gold/30 text-gold/50 hover:bg-gold/10 hover:text-gold transition-colors self-start"
+          className="flex h-8 w-8 shrink-0 items-center justify-center rounded-3xl border border-gold/30 text-gold/50 hover:bg-gold/10 hover:text-gold transition-colors self-start"
         >
           <X size={15} />
         </button>

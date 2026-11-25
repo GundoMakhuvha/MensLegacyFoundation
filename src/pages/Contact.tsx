@@ -14,9 +14,9 @@ const Contact = () => {
 
   return (
     <>
-      <section className="py-20 bg-navy-gradient">
+      <section className="page-hero bg-navy-gradient">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-gold font-semibold tracking-widest uppercase text-sm mb-2">Reach Out</p>
+          <p className="eyebrow mb-4">Reach Out</p>
           <h1 className="font-display text-4xl md:text-5xl font-bold text-primary-foreground mb-4">Contact Us</h1>
           <p className="max-w-2xl mx-auto text-primary-foreground/70 text-lg">We'd love to hear from you. Get in touch today.</p>
         </div>
@@ -30,7 +30,7 @@ const Contact = () => {
               <h2 className="font-display text-2xl font-bold text-foreground mb-6">Get In Touch</h2>
               <div className="flex flex-col gap-5">
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-navy flex items-center justify-center shrink-0">
+                  <div className="w-10 h-10 rounded-2xl bg-navy flex items-center justify-center shrink-0">
                     <Phone size={18} className="text-primary-foreground" />
                   </div>
                   <div>
@@ -44,7 +44,7 @@ const Contact = () => {
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-navy flex items-center justify-center shrink-0">
+                  <div className="w-10 h-10 rounded-2xl bg-navy flex items-center justify-center shrink-0">
                     <Mail size={18} className="text-primary-foreground" />
                   </div>
                   <div>
@@ -53,7 +53,7 @@ const Contact = () => {
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-navy flex items-center justify-center shrink-0">
+                  <div className="w-10 h-10 rounded-2xl bg-navy flex items-center justify-center shrink-0">
                     <MapPin size={18} className="text-primary-foreground" />
                   </div>
                   <div>
@@ -62,7 +62,7 @@ const Contact = () => {
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-navy flex items-center justify-center shrink-0">
+                  <div className="w-10 h-10 rounded-2xl bg-navy flex items-center justify-center shrink-0">
                     <Clock size={18} className="text-primary-foreground" />
                   </div>
                   <div>
@@ -73,7 +73,7 @@ const Contact = () => {
               </div>
 
               {/* Map */}
-              <div className="mt-8 rounded-lg overflow-hidden border border-border shadow-md">
+              <div className="mt-8 rounded-3xl overflow-hidden border border-border shadow-md">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3584.7!2d27.77!3d-26.1!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDA2JzAwLjAiUyAyN8KwNDYnMTIuMCJF!5e0!3m2!1sen!2sza!4v1"
                   width="100%"
@@ -91,7 +91,7 @@ const Contact = () => {
             <div>
               <h2 className="font-display text-2xl font-bold text-foreground mb-6">Send a Message</h2>
               {submitted ? (
-                <div className="bg-secondary rounded-lg p-8 text-center border border-border">
+                <div className="bg-secondary rounded-3xl p-8 text-center border border-border">
                   <div className="w-16 h-16 rounded-full bg-navy flex items-center justify-center mx-auto mb-4">
                     <Send size={28} className="text-primary-foreground" />
                   </div>
@@ -109,7 +109,7 @@ const Contact = () => {
                       maxLength={100}
                       value={form.name}
                       onChange={(e) => setForm({ ...form, name: e.target.value })}
-                      className="w-full px-4 py-3 rounded-md border border-input bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring"
+                      className="w-full px-4 py-3 rounded-2xl border border-input bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring"
                       placeholder="Your full name"
                     />
                   </div>
@@ -122,7 +122,7 @@ const Contact = () => {
                       maxLength={255}
                       value={form.email}
                       onChange={(e) => setForm({ ...form, email: e.target.value })}
-                      className="w-full px-4 py-3 rounded-md border border-input bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring"
+                      className="w-full px-4 py-3 rounded-2xl border border-input bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring"
                       placeholder="your@email.com"
                     />
                   </div>
@@ -135,13 +135,13 @@ const Contact = () => {
                       rows={5}
                       value={form.message}
                       onChange={(e) => setForm({ ...form, message: e.target.value })}
-                      className="w-full px-4 py-3 rounded-md border border-input bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring resize-none"
+                      className="w-full px-4 py-3 rounded-2xl border border-input bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring resize-none"
                       placeholder="How can we help?"
                     />
                   </div>
                   <button
                     type="submit"
-                    className="w-full px-6 py-3 bg-navy text-primary-foreground font-semibold rounded-md hover:bg-navy-light transition-colors"
+                    className="w-full px-6 py-3 bg-navy text-primary-foreground font-semibold rounded-full hover:bg-navy-light transition-colors"
                   >
                     Send Message
                   </button>
@@ -159,7 +159,7 @@ const Contact = () => {
           <p className="text-navy-dark/80 max-w-xl mx-auto mb-8">
             Your contribution helps us reach more young boys and transform their futures. Every donation makes a difference.
           </p>
-          <a href="/donate" className="inline-block px-8 py-4 bg-navy text-primary-foreground font-semibold rounded-md hover:bg-navy-light transition-colors text-lg">
+          <a href="/donate" className="inline-block px-8 py-4 bg-navy text-primary-foreground font-semibold rounded-full hover:bg-navy-light transition-colors text-lg">
             Donate Now
           </a>
         </div>

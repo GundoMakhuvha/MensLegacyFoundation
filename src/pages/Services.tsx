@@ -30,9 +30,9 @@ const services = [
 
 const Services = () => (
   <>
-    <section className="py-20 bg-navy-gradient">
+    <section className="page-hero bg-navy-gradient">
       <div className="container mx-auto px-4 text-center">
-        <p className="text-gold font-semibold tracking-widest uppercase text-sm mb-2">What We Offer</p>
+        <p className="eyebrow mb-4">What We Offer</p>
         <h1 className="font-display text-4xl md:text-5xl font-bold text-primary-foreground mb-4">Our Services</h1>
         <p className="max-w-2xl mx-auto text-primary-foreground/70 text-lg">
           Comprehensive programmes designed to develop, educate, and empower young men.
@@ -46,11 +46,11 @@ const Services = () => (
           {services.map((service, i) => (
             <div
               key={service.title}
-              className={`bg-card rounded-lg p-8 shadow-md border border-border hover:shadow-xl transition-all duration-300 hover:-translate-y-1 ${
+              className={`bg-card rounded-3xl p-8 shadow-[0_1px_2px_hsl(var(--navy-dark)/0.04),0_12px_32px_-12px_hsl(var(--navy-dark)/0.12)] border border-border/70 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 ${
                 i === services.length - 1 && services.length % 3 !== 0 ? "md:col-span-2 lg:col-span-1" : ""
               }`}
             >
-              <div className="w-14 h-14 rounded-lg bg-navy flex items-center justify-center mb-5">
+              <div className="w-14 h-14 rounded-2xl bg-navy flex items-center justify-center mb-5">
                 <service.icon className="text-primary-foreground" size={28} />
               </div>
               <h3 className="font-display text-xl font-bold text-foreground mb-3">{service.title}</h3>

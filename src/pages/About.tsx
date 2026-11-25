@@ -18,9 +18,9 @@ const About = () => {
   return (
     <>
       {/* Hero */}
-      <section className="py-20 bg-navy-gradient">
+      <section className="page-hero bg-navy-gradient">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-gold font-semibold tracking-widest uppercase text-sm mb-2">About Us</p>
+          <p className="eyebrow mb-4">About Us</p>
           <h1 className="font-display text-4xl md:text-5xl font-bold text-primary-foreground mb-4">Who We Are</h1>
           <p className="max-w-2xl mx-auto text-primary-foreground/70 text-lg">Empowering boys to become men of value.</p>
         </div>
@@ -42,16 +42,16 @@ const About = () => {
       <section className="py-20 bg-secondary">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div className="bg-card rounded-lg p-8 shadow-md border border-border card-premium reveal">
-              <div className="w-12 h-12 rounded-lg bg-navy flex items-center justify-center mb-4">
+            <div className="bg-card rounded-3xl p-8 shadow-[0_1px_2px_hsl(var(--navy-dark)/0.04),0_12px_32px_-12px_hsl(var(--navy-dark)/0.12)] border border-border/70 card-premium reveal">
+              <div className="w-12 h-12 rounded-2xl bg-navy flex items-center justify-center mb-4">
                 <span className="text-2xl">🌱</span>
               </div>
               <h3 className="font-display text-2xl font-bold text-foreground mb-3">Our Vision</h3>
               <p className="text-muted-foreground leading-relaxed mb-2">Changing the outlook of the Boy child in our country.</p>
               <p className="text-gold font-display italic text-lg">"Seeds for a better tomorrow."</p>
             </div>
-            <div className="bg-card rounded-lg p-8 shadow-md border border-border card-premium reveal">
-              <div className="w-12 h-12 rounded-lg bg-navy flex items-center justify-center mb-4">
+            <div className="bg-card rounded-3xl p-8 shadow-[0_1px_2px_hsl(var(--navy-dark)/0.04),0_12px_32px_-12px_hsl(var(--navy-dark)/0.12)] border border-border/70 card-premium reveal">
+              <div className="w-12 h-12 rounded-2xl bg-navy flex items-center justify-center mb-4">
                 <span className="text-2xl">🎯</span>
               </div>
               <h3 className="font-display text-2xl font-bold text-foreground mb-3">Our Mission</h3>
@@ -85,19 +85,19 @@ const About = () => {
             <div className="reveal grid grid-cols-2 gap-4">
               <button
                 onClick={() => setLightboxImage({ src: "https://i.postimg.cc/bvTBLJDv/about-1.png", alt: "Founders meeting" })}
-                className="aspect-square rounded-lg overflow-hidden shadow-lg col-span-2 cursor-pointer"
+                className="aspect-square rounded-3xl overflow-hidden shadow-lg col-span-2 cursor-pointer"
               >
                 <img src="https://i.postimg.cc/bvTBLJDv/about-1.png" alt="The founding circle" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
               </button>
               <button
                 onClick={() => setLightboxImage({ src: "https://i.postimg.cc/fTvm0Hpd/IMG-0921.jpg", alt: "Early camp moment" })}
-                className="aspect-square rounded-lg overflow-hidden shadow-md cursor-pointer"
+                className="aspect-square rounded-3xl overflow-hidden shadow-md cursor-pointer"
               >
                 <img src="https://i.postimg.cc/fTvm0Hpd/IMG-0921.jpg" alt="Early camp moment" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
               </button>
               <button
                 onClick={() => setLightboxImage({ src: "https://i.postimg.cc/P5F4qwwv/about-3.png", alt: "Mentors and boys" })}
-                className="aspect-square rounded-lg overflow-hidden shadow-md cursor-pointer"
+                className="aspect-square rounded-3xl overflow-hidden shadow-md cursor-pointer"
               >
                 <img src="https://i.postimg.cc/P5F4qwwv/about-3.png" alt="Mentors and boys" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
               </button>
@@ -110,12 +110,12 @@ const About = () => {
       <section className="py-20 bg-secondary">
         <div className="container mx-auto px-4">
           <div className="text-center mb-14 reveal">
-            <p className="text-gold font-semibold tracking-widest uppercase text-sm mb-2">Leadership</p>
+            <p className="eyebrow mb-4">Leadership</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">Our Team</h2>
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
             {teamMembers.map((member) => (
-              <div key={member.role} className="group relative bg-card rounded-lg overflow-hidden shadow-md border border-border card-premium reveal">
+              <div key={member.role} className="group relative bg-card rounded-3xl overflow-hidden shadow-[0_1px_2px_hsl(var(--navy-dark)/0.04),0_12px_32px_-12px_hsl(var(--navy-dark)/0.12)] border border-border/70 card-premium reveal">
                 <button
                   className="aspect-square w-full bg-secondary flex items-center justify-center cursor-pointer"
                   onClick={() => member.image && setLightboxImage({ src: member.image, alt: member.name })}

@@ -36,7 +36,7 @@ const Testimonials = () => {
     <section className="py-20 bg-secondary">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 reveal">
-          <p className="text-gold font-semibold tracking-widest uppercase text-sm mb-2">Voices of Change</p>
+          <p className="eyebrow mb-4">Voices of Change</p>
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">What People Are Saying</h2>
         </div>
         <div className="max-w-3xl mx-auto reveal">

@@ -52,7 +52,8 @@ const Home = () => {
             />
           </div>
         ))}
-        <div className="absolute inset-0 bg-navy-dark/75 z-[1]" />
+        <div className="absolute inset-0 z-[1] bg-[linear-gradient(180deg,hsl(var(--navy-dark)/0.85)_0%,hsl(var(--navy-dark)/0.6)_45%,hsl(var(--navy-dark)/0.92)_100%)]" />
+        <div className="absolute inset-0 z-[1] bg-[radial-gradient(60%_50%_at_50%_40%,hsl(var(--gold)/0.14),transparent_70%)]" />
 
         {/* Slide indicators */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-2.5">
@@ -70,9 +71,13 @@ const Home = () => {
           ))}
         </div>
 
-        <div className="relative z-10 container mx-auto px-5 text-center">
+        <div className="relative z-10 container mx-auto px-5 pt-24 text-center">
+          <span className="mb-6 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-xs font-medium text-white/85 ring-1 ring-white/15 backdrop-blur">
+            <span className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse" />
+            Registered NPO · Krugersdorp, Gauteng
+          </span>
           {/* Typing headline */}
-          <h1 className="font-display text-[2.1rem] leading-[1.15] sm:text-5xl md:text-7xl font-bold text-primary-foreground mb-5 min-h-[2.4em] sm:min-h-[1.2em]">
+          <h1 className="font-display text-[2.1rem] leading-[1.15] sm:text-5xl md:text-7xl font-extrabold text-primary-foreground mb-5 min-h-[2.4em] sm:min-h-[1.2em]">
             {!isComplete && (
               <>
                 {displayText}
@@ -98,13 +103,13 @@ const Home = () => {
             <div className="flex flex-col gap-3 sm:flex-row sm:gap-4 justify-center px-4 sm:px-0">
               <Link
                 to="/contact"
-                className="w-full sm:w-auto px-8 py-4 bg-gold-gradient text-navy-dark font-semibold rounded-md hover:opacity-90 transition-opacity text-base sm:text-lg text-center"
+                className="w-full sm:w-auto px-8 py-4 bg-gold-gradient text-navy-dark font-semibold rounded-full hover:opacity-90 transition-opacity text-base sm:text-lg text-center"
               >
                 Get Involved
               </Link>
               <Link
                 to="/about"
-                className="w-full sm:w-auto px-8 py-4 border-2 border-primary-foreground/30 text-primary-foreground font-semibold rounded-md hover:bg-primary-foreground/10 transition-colors text-base sm:text-lg text-center"
+                className="w-full sm:w-auto px-8 py-4 border-2 border-primary-foreground/30 text-primary-foreground font-semibold rounded-full hover:bg-primary-foreground/10 transition-colors text-base sm:text-lg text-center"
               >
                 Learn More
               </Link>
@@ -117,7 +122,7 @@ const Home = () => {
       <section className="py-14 sm:py-20 bg-secondary">
         <div className="container mx-auto px-5">
           <div className="text-center mb-10 sm:mb-14 reveal">
-            <p className="text-gold font-semibold tracking-widest uppercase text-xs sm:text-sm mb-2">
+            <p className="eyebrow mb-4">
               What We Do
             </p>
             <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">
@@ -144,9 +149,9 @@ const Home = () => {
             ].map((item) => (
               <div
                 key={item.title}
-                className="bg-card rounded-lg p-6 sm:p-8 shadow-md border border-border group card-premium reveal"
+                className="bg-card rounded-3xl p-6 sm:p-8 shadow-[0_1px_2px_hsl(var(--navy-dark)/0.04),0_12px_32px_-12px_hsl(var(--navy-dark)/0.12)] border border-border/70 group card-premium reveal"
               >
-                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-lg bg-navy flex items-center justify-center mb-4 sm:mb-5 group-hover:bg-gold transition-colors">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-navy flex items-center justify-center mb-4 sm:mb-5 group-hover:bg-gold transition-colors">
                   <item.icon className="text-primary-foreground" size={24} />
                 </div>
                 <h3 className="font-display text-lg sm:text-xl font-bold text-foreground mb-2 sm:mb-3">
@@ -163,7 +168,7 @@ const Home = () => {
       <section className="py-14 sm:py-20 bg-navy-gradient">
         <div className="container mx-auto px-5">
           <div className="text-center mb-10 sm:mb-14 reveal">
-            <p className="text-gold font-semibold tracking-widest uppercase text-xs sm:text-sm mb-2">
+            <p className="eyebrow mb-4">
               Our Reach
             </p>
             <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-primary-foreground">
@@ -179,7 +184,7 @@ const Home = () => {
             ].map((item, i) => (
               <div
                 key={item.year}
-                className="flex-shrink-0 text-center reveal bg-white/5 rounded-xl px-6 py-5 sm:bg-transparent sm:rounded-none sm:px-0 sm:py-0"
+                className="flex-shrink-0 text-center reveal bg-white/5 rounded-3xl px-6 py-5 sm:bg-transparent sm:rounded-none sm:px-0 sm:py-0"
                 style={{ transitionDelay: `${i * 120}ms` }}
               >
                 <p className="text-gold font-semibold text-xs tracking-widest mb-1 sm:mb-2">
@@ -204,7 +209,7 @@ const Home = () => {
             {/* Image first on mobile for visual impact */}
             <button
               onClick={() => setLightboxImage(campImg)}
-              className="rounded-lg overflow-hidden shadow-xl cursor-pointer reveal order-first md:order-last"
+              className="rounded-3xl overflow-hidden shadow-xl cursor-pointer reveal order-first md:order-last"
             >
               <img
                 src={campImg}
@@ -213,7 +218,7 @@ const Home = () => {
               />
             </button>
             <div className="reveal">
-              <p className="text-gold font-semibold tracking-widest uppercase text-xs sm:text-sm mb-2">
+              <p className="eyebrow mb-4">
                 About Us
               </p>
               <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4 sm:mb-6">
@@ -230,7 +235,7 @@ const Home = () => {
               </p>
               <Link
                 to="/about"
-                className="inline-block px-6 py-3 bg-navy text-primary-foreground font-semibold rounded-md hover:bg-navy-light transition-colors text-sm sm:text-base"
+                className="inline-block px-6 py-3 bg-navy text-primary-foreground font-semibold rounded-full hover:bg-navy-light transition-colors text-sm sm:text-base"
               >
                 Read Our Story
               </Link>
@@ -270,13 +275,13 @@ const Home = () => {
           <div className="flex flex-col gap-3 sm:flex-row sm:gap-4 justify-center px-4 sm:px-0">
             <Link
               to="/contact"
-              className="w-full sm:w-auto px-8 py-4 bg-navy text-primary-foreground font-semibold rounded-md hover:bg-navy-light transition-colors text-base sm:text-lg text-center"
+              className="w-full sm:w-auto px-8 py-4 bg-navy text-primary-foreground font-semibold rounded-full hover:bg-navy-light transition-colors text-base sm:text-lg text-center"
             >
               Sponsor a Boy
             </Link>
             <Link
               to="/contact"
-              className="w-full sm:w-auto px-8 py-4 border-2 border-navy-dark/30 text-navy-dark font-semibold rounded-md hover:bg-navy-dark/10 transition-colors text-base sm:text-lg text-center"
+              className="w-full sm:w-auto px-8 py-4 border-2 border-navy-dark/30 text-navy-dark font-semibold rounded-full hover:bg-navy-dark/10 transition-colors text-base sm:text-lg text-center"
             >
               Contact Us
             </Link>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Image as ImageIcon, CalendarDays, MapPin, ShieldCheck } from "lucide-react";
+import { Image as ImageIcon, CalendarDays, MapPin, ShieldCheck, Play } from "lucide-react";
 import Lightbox from "@/components/Lightbox";
 
 const samplePhotos = [
@@ -72,9 +72,9 @@ const Gallery = () => {
 
   return (
     <>
-      <section className="py-20 bg-navy-gradient">
+      <section className="page-hero bg-navy-gradient">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-gold font-semibold tracking-widest uppercase text-sm mb-2">Memories</p>
+          <p className="eyebrow mb-4">Memories</p>
           <h1 className="font-display text-4xl md:text-5xl font-bold text-primary-foreground mb-4">Gallery</h1>
           <p className="max-w-2xl mx-auto text-primary-foreground/70 text-lg">Relive our events and see the impact we make together.</p>
         </div>
@@ -88,7 +88,7 @@ const Gallery = () => {
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`px-8 py-3 rounded-md font-semibold text-sm transition-colors ${
+                className={`px-8 py-3 rounded-full font-semibold text-sm transition-colors ${
                   activeTab === tab
                     ? "bg-navy text-primary-foreground"
                     : "bg-secondary text-muted-foreground hover:bg-border"
@@ -102,7 +102,7 @@ const Gallery = () => {
           {activeTab === "photos" && (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {samplePhotos.map((photo) => (
-                <figure key={photo.id} className="group bg-card rounded-lg overflow-hidden border border-border card-premium reveal">
+                <figure key={photo.id} className="group bg-card rounded-3xl overflow-hidden border border-border card-premium reveal">
                   <button
                     onClick={() => setLightboxPhoto({ src: photo.src, alt: photo.title })}
                     className="aspect-square w-full overflow-hidden relative block"
@@ -135,7 +135,7 @@ const Gallery = () => {
           {activeTab === "videos" && (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {sampleVideos.map((video) => (
-                <div key={video.id} className="aspect-video bg-secondary rounded-lg overflow-hidden border border-border relative group">
+                <div key={video.id} className="aspect-video bg-secondary rounded-3xl overflow-hidden border border-border relative group">
                   {video.youtubeId ? (
                     <iframe
                       src={`https://www.youtube.com/embed/${video.youtubeId}`}
@@ -162,13 +162,13 @@ const Gallery = () => {
       {/* Legal Consideration */}
       <section className="pb-20">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto bg-secondary border-l-4 border-gold rounded-lg p-8 reveal">
+          <div className="max-w-4xl mx-auto bg-secondary border-l-4 border-gold rounded-3xl p-8 reveal">
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-lg bg-navy flex items-center justify-center shrink-0">
+              <div className="w-12 h-12 rounded-2xl bg-navy flex items-center justify-center shrink-0">
                 <ShieldCheck className="text-gold" size={24} />
               </div>
               <div>
-                <p className="text-gold font-semibold tracking-widest uppercase text-xs mb-2">Legal Consideration</p>
+                <p className="eyebrow mb-4">Legal Consideration</p>
                 <h3 className="font-display text-xl md:text-2xl font-bold text-foreground mb-3">Media Release & Consent</h3>
                 <p className="text-muted-foreground leading-relaxed mb-3">
                   For all future events involving minors, parent/guardian consent forms must include a media release clause. This explicitly authorises:
